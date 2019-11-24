@@ -1,7 +1,33 @@
 <!-- templates/base.html -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <header>
-    <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a>
+  <div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+      <h1>SiteManager</h1>
+      <nav class="nav">
+          <a class="nav-link active" href="{% url 'home' %}">Home</a>
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </nav>
+        </div>
+        
+      <div class="col-sm"></div>
+    </div>
   </header>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm">
+              {% block content %}
+              {% endblock %}
+          </div>
+          <div class="col-sm"></div>
+        </div>
+    
+    </div>
   
-  {% block content %}
-  {% endblock %}
