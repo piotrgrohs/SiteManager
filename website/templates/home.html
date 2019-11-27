@@ -2,5 +2,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4>Homepage</h4>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Versions
+    </div>
+    <ul class="list-group list-group-flush">
+        {% for model in models %}
+        <li class="list-group-item">{{ model.title }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
 {% endblock content %}
