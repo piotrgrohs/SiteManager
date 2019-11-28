@@ -10,6 +10,7 @@ from django.utils import timezone
 class Model(models.Model):
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
+    file = models.FileField(upload_to='uploads/', default='upload file' )
 
     def __str__(self):
         return self.title
