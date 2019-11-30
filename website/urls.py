@@ -1,8 +1,9 @@
 
-from django.conf.urls import url
-from .views import HomePageView, AboutPageView
+from django.urls import path
+from .views import HomePageView, AboutPageView, file_detail
 
 urlpatterns = [
-    url(r'^about/', AboutPageView.as_view(), name='about'),
-    url(r'', HomePageView.as_view(), name='home')
+    path('about/', AboutPageView.as_view(), name='about'),
+    path('file/<int:pk>/', file_detail, name='file'),
+    path('', HomePageView.as_view(), name='home')
 ]
