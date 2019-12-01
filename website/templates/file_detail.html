@@ -1,1 +1,4 @@
-{% include "uploads/index.html" %}
+
+{% with file.filepath as template %}
+{% include template %}
+{% endwith %}
